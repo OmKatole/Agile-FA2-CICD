@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#172554" />
+  <meta name="description" content="A simple student management system used to demonstrate an Agile CI/CD workflow." />
+  <title>StudentHub | Student Management</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span><span>StudentHub</span></div>
+      <div class="side-caption">WORKSPACE</div>
+      <a class="nav-item active" href="#dashboard"><span class="nav-icon">▦</span> Dashboard</a>
+      <a class="nav-item" href="#students"><span class="nav-icon">♙</span> Students</a>
+      <div class="sidebar-bottom">
+        <div class="pipeline-mini"><span class="pulse-dot"></span><div><strong>CI/CD demo</strong><small>GitHub Actions</small></div></div>
+        <small class="sidebar-foot">Agile Software Development · FA2</small>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div><p class="eyebrow">STUDENT ADMINISTRATION</p><h1>Student dashboard</h1><p class="subtitle">Manage student records in one simple workspace.</p></div>
+        <div class="topbar-chip"><span class="green-dot"></span> Demo environment</div>
+      </header>
+
+      <section class="stats-grid" aria-label="Student statistics">
+        <article class="stat-card"><div class="stat-icon purple">♙</div><div><p>Total students</p><strong id="total-students">0</strong><small>Registered records</small></div></article>
+        <article class="stat-card"><div class="stat-icon blue">▤</div><div><p>Courses represented</p><strong id="total-courses">0</strong><small>Unique courses</small></div></article>
+        <article class="stat-card"><div class="stat-icon mint">✓</div><div><p>Final-year students</p><strong id="final-year-students">0</strong><small>4th-year records</small></div></article>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel form-panel" aria-labelledby="add-heading">
+          <div class="panel-heading"><div><p class="eyebrow">NEW RECORD</p><h2 id="add-heading">Add a student</h2></div><span class="heading-icon">＋</span></div>
+          <p class="panel-help">Enter the details below to create a student record.</p>
+          <form id="student-form" novalidate>
+            <label for="student-name">Full name</label>
+            <input id="student-name" name="name" type="text" placeholder="e.g. Aarya Patil" autocomplete="name" required />
+            <label for="student-email">Email address</label>
+            <input id="student-email" name="email" type="email" placeholder="student@example.com" autocomplete="email" required />
+            <label for="student-course">Course / branch</label>
+            <select id="student-course" name="course" required>
+              <option value="">Select a course</option>
+              <option>Information Technology</option>
+              <option>Computer Engineering</option>
+              <option>Electronics and Telecommunication</option>
+              <option>Mechanical Engineering</option>
+              <option>Artificial Intelligence and Data Science</option>
+            </select>
+            <label for="student-year">Academic year</label>
+            <select id="student-year" name="year" required>
+              <option value="">Select academic year</option>
+              <option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option>
+            </select>
+            <p id="form-message" class="form-message" role="alert" aria-live="polite"></p>
+            <button class="primary-button" type="submit">＋ Add student</button>
+          </form>
+        </section>
+
+        <section class="panel roster-panel" id="students" aria-labelledby="roster-heading">
+          <div class="panel-heading roster-heading"><div><p class="eyebrow">STUDENT DIRECTORY</p><h2 id="roster-heading">Registered students</h2></div><span id="visible-count" class="count-pill">0 records</span></div>
+          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="student-search" type="search" placeholder="Search name, email, or course..." aria-label="Search students" /></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Student</th><th>Course</th><th>Year</th><th class="action-heading">Action</th></tr></thead>
+              <tbody id="student-rows"></tbody>
+            </table>
+            <div id="empty-state" class="empty-state" hidden><span>⌕</span><strong>No students found</strong><p>Try another search or add a new student record.</p></div>
+          </div>
+          <div class="panel-footer"><span><span class="green-dot"></span> Changes are saved in this browser</span><span>StudentHub v1.0</span></div>
+        </section>
+      </section>
+      <footer class="page-footer">Built for the Agile Software Development FA2 · GitHub Actions CI/CD demonstration</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

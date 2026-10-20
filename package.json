@@ -1,0 +1,16 @@
+{
+  "name": "studenthub-agile-cicd-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Student Management System for Agile Software Development FA2 CI/CD demonstration",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test",
+    "lint": "eslint src test scripts eslint.config.js",
+    "check": "npm run build && npm test && npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
