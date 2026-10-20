@@ -91,14 +91,3 @@ git push -u origin main
 
 Replace the example repository URL with your own. Do not paste passwords, access tokens, or secrets into code or the repository.
 
-## 1–2 minute video narration (use your own voice)
-
-“Hello, this is our Agile Software Development FA2 project, StudentHub, a simple Student Management System. It lets an administrator add student details, search records by name, email, course, or academic year, and delete records. It also updates dashboard statistics, and records are saved in the browser.
-
-For Agile planning, we created user stories, divided the work into two sprints, defined our Definition of Done, and prepared acceptance criteria for adding a student.
-
-Our CI/CD pipeline is implemented using GitHub Actions. When code is pushed to the main branch, the workflow builds the application, runs automated tests, checks code quality using ESLint, and then deploys the built website to GitHub Pages. Deployment runs only after the earlier checks pass. Pull requests run the build, tests, and quality checks without deploying.
-
-This demonstrates how automation helps a team find errors earlier and publish a consistent version of the application. Thank you.”
-
-**Reminder:** The notice requires a single 1–2 minute video with narration in your original voice; AI-generated narration is not allowed.
